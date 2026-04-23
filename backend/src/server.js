@@ -7,9 +7,32 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.API_PORT || 3001;
+const NODE_ENV = process.env.NODE_ENV || 'development';
+
+// Configurar CORS para produção
+const corsOptions = {
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:3001',
+      'https://inventario-alesxandrocosta.vercel.app',
+      'https://inventario.com.br',  // Adicionar seu domínio aqui
+    ];
+    
+    if (NODE_ENV === 'development' || !origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.warn(`CORS bloqueado para origin: ${origin}`);
+      callback(new Error('CORS não permitido'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
 
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
