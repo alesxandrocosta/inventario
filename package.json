@@ -1,0 +1,16 @@
+{
+  "name": "Inventário de Assistência Técnica",
+  "description": "Sistema full stack para gerenciamento de inventário de equipamentos",
+  "version": "1.0.0",
+  "author": "Sistema de Inventário",
+  "license": "MIT",
+  "keywords": ["inventário", "equipamentos", "assistência técnica"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seu-repo/inventario.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seu-repo/inventario/issues"
+  },
+  "homepage": "https://github.com/seu-repo/inventario#readme"
+}

@@ -1,0 +1,97 @@
+# Sistema de Inventário de Assistência Técnica
+
+## 🎯 Objetivo
+
+Sistema full stack para gerenciar e rastrear equipamentos de assistência técnica, incluindo:
+- Cadastro de equipamentos (monitores, notebooks, desktops, etc)
+- Controle de integridade e limpeza
+- Rastreamento de peças faltantes
+- Geração automática de lista de compras
+- Exportação de relatórios em Excel
+
+## 📂 Estrutura do Projeto
+
+```
+inventario/
+├── backend/                 # API Express.js + Node
+├── frontend/                # Interface React + Vite
+├── database/                # Scripts MySQL
+├── README.md                # Este arquivo
+├── INSTALACAO.md           # Guia de instalação detalhado
+├── GUIA_USO.md            # Manual de uso do sistema
+└── package.json            # Metadados do projeto
+```
+
+## ⚡ Quick Start
+
+### 1. Preparar Banco de Dados
+```bash
+mysql -u root -p < database/schema.sql
+```
+
+### 2. Iniciar Backend
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### 3. Iniciar Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### 4. Acessar
+- http://localhost:3000 (Frontend)
+- http://localhost:3001 (API)
+
+## 🛠️ Stack Tecnológico
+
+### Backend
+- Node.js 14+
+- Express.js 4.18
+- MySQL 5.7+
+- ExcelJS
+
+### Frontend
+- React 18
+- Vite
+- Axios
+- React Icons
+
+## 📚 Documentação
+
+- [INSTALACAO.md](./INSTALACAO.md) - Guia completo de instalação
+- [GUIA_USO.md](./GUIA_USO.md) - Manual de uso do sistema
+- [README.md](./README.md) - Documentação técnica detalhada
+
+## ✨ Funcionalidades
+
+- ✅ CRUD de equipamentos
+- ✅ Busca e filtros
+- ✅ Validação de formulários
+- ✅ Exportação para Excel
+- ✅ Lista de compras automática
+- ✅ Interface responsiva
+- ✅ API RESTful
+- ✅ Banco de dados relacional
+
+## 🚀 Próximas Melhorias
+
+- Autenticação de usuários
+- Histórico de alterações
+- Fotos dos equipamentos
+- QR Code/Código de barras
+- Relatórios avançados
+- Notificações
+- Dark mode
+
+## 📞 Suporte
+
+Consulte a documentação incluída ou entre em contato.
+
+---
+
+**Desenvolvido com React + Express + MySQL** ❤️
