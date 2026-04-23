@@ -30,6 +30,7 @@ class Equipment {
         marca,
         modelo,
         numero_serie,
+        tamanho_polegadas,
         status_integridade,
         pecas_faltantes,
         status_limpeza,
