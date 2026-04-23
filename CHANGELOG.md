@@ -7,6 +7,44 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.2.0] - 2026-04-23
+
+### ✨ Adicionado
+- **Suporte para Deploy Remoto**
+  - Integração com Vercel (Frontend)
+  - Integração com Render.com / Railway (Backend)
+  - Configuração de CORS para produção
+  - Guias completos de deployment
+
+- **Documentação de Deploy**
+  - DEPLOYMENT_GUIDE.md: Guia visual e completo
+  - QUICK_DEPLOY.md: Setup em 5 minutos
+  - DEPLOY_ALTERNATIVES.md: Todas as opções disponíveis
+  - Scripts de preparação (prepare-deploy.sh/bat)
+
+- **Arquivos de Configuração**
+  - vercel.json: Configuração para Vercel
+  - render.yaml: Configuração para Render
+  - .env.production: Variáveis de ambiente para produção
+
+### 🔧 Modificado
+- server.js: CORS configurado para múltiplas origens com segurança
+- package.json: Scripts otimizados para produção
+- Estrutura do projeto alinhada com padrões de deploy
+
+### 📊 Arquitetura
+- Frontend: Vercel (CDN global)
+- Backend: Railway / Render (Node.js)
+- Database: MySQL gerenciado
+- Certificados SSL/TLS: Automáticos
+
+### 🚀 Deploy Options
+- Railway.app (recomendado) - $5-10/mês
+- Vercel + Render - Free/pago conforme uso
+- DigitalOcean - $12/mês (controle total)
+
+---
+
 ## [1.1.0] - 2026-04-23
 
 ### ✨ Adicionado
