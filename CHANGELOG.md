@@ -7,6 +7,27 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ---
 
+## [1.1.0] - 2026-04-23
+
+### ✨ Adicionado
+- **Campo de Tamanho em Polegadas**
+  - Novo campo `tamanho_polegadas` (DECIMAL 5,2) na tabela de equipamentos
+  - Suporte para monitores, notebooks, TVs e outros equipamentos com tela
+  - Campo opcional (requerido apenas quando aplicável)
+  - Exibição formatada na tabela com símbolo de polegada (")
+
+### 🔄 Alterado
+- Schema do banco de dados expandido com coluna de tamanho
+- Dados de exemplo atualizados com tamanhos reais
+- Formulário de cadastro com novo campo numérico
+- Tabela de inventário com coluna adicional
+
+### 📋 Campos Atualizados
+- Adicionado: Tamanho em Polegadas (opcional)
+- Suporte a valores decimais (Ex: 15.6", 24", 27")
+
+---
+
 ## [1.0.0] - 2026-04-23
 
 ### ✨ Adicionado
@@ -27,7 +48,7 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
   - Componentes reutilizáveis
 
 - **Banco de Dados MySQL**
-  - Tabela `equipamentos` com 13 campos
+  - Tabela `equipamentos` com 14 campos (incluindo tamanho em polegadas desde v1.1.0)
   - 3 índices para performance
   - 4 registros de exemplo pré-carregados
   - Charset UTF-8 Unicode
@@ -53,6 +74,7 @@ e este projeto segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 - Marca
 - Modelo
 - Número de Série (opcional)
+- Tamanho em Polegadas (opcional - v1.1.0+)
 - Status de Integridade (4 opções)
 - Peças Faltantes (opcional)
 - Status de Limpeza (3 opções)

@@ -49,9 +49,9 @@ class Equipment {
 
       const query = `
         INSERT INTO equipamentos 
-        (id_interno, tipo, marca, modelo, numero_serie, status_integridade, 
+        (id_interno, tipo, marca, modelo, numero_serie, tamanho_polegadas, status_integridade, 
          pecas_faltantes, status_limpeza, testado, data_registro, observacoes)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), ?)
       `;
 
       const [result] = await pool.query(query, [
@@ -60,6 +60,7 @@ class Equipment {
         marca,
         modelo,
         numero_serie,
+        tamanho_polegadas || null,
         status_integridade,
         pecas_faltantes || null,
         status_limpeza,
@@ -82,6 +83,7 @@ class Equipment {
         marca,
         modelo,
         numero_serie,
+        tamanho_polegadas,
         status_integridade,
         pecas_faltantes,
         status_limpeza,
@@ -91,7 +93,7 @@ class Equipment {
 
       const query = `
         UPDATE equipamentos 
-        SET id_interno = ?, tipo = ?, marca = ?, modelo = ?, numero_serie = ?,
+        SET id_interno = ?, tipo = ?, marca = ?, modelo = ?, numero_serie = ?, tamanho_polegadas = ?,
             status_integridade = ?, pecas_faltantes = ?, status_limpeza = ?, 
             testado = ?, observacoes = ?
         WHERE id = ?
@@ -103,6 +105,7 @@ class Equipment {
         marca,
         modelo,
         numero_serie,
+        tamanho_polegadas || null,
         status_integridade,
         pecas_faltantes || null,
         status_limpeza,

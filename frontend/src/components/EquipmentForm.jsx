@@ -9,6 +9,7 @@ export default function EquipmentForm({ equipmentId, onSuccess, onCancel }) {
     marca: '',
     modelo: '',
     numero_serie: '',
+    tamanho_polegadas: '',
     status_integridade: 'Completo',
     pecas_faltantes: '',
     status_limpeza: 'Pendente',
@@ -130,6 +131,19 @@ export default function EquipmentForm({ equipmentId, onSuccess, onCancel }) {
           name="numero_serie"
           value={formData.numero_serie}
           onChange={handleChange}
+        />
+      </div>
+
+      <div className="form-group">
+        <label>Tamanho em Polegadas</label>
+        <input
+          type="number"
+          name="tamanho_polegadas"
+          value={formData.tamanho_polegadas}
+          onChange={handleChange}
+          step="0.1"
+          min="0"
+          placeholder="Ex: 24, 15.6, 27"
         />
       </div>
 

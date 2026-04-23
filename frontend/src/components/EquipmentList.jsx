@@ -113,6 +113,7 @@ export default function EquipmentList() {
                   <th>Marca</th>
                   <th>Modelo</th>
                   <th>Número de Série</th>
+                  <th>Tamanho (")</th>
                   <th>Status</th>
                   <th>Testado</th>
                   <th>Ações</th>
@@ -126,6 +127,7 @@ export default function EquipmentList() {
                     <td>{eq.marca}</td>
                     <td>{eq.modelo}</td>
                     <td>{eq.numero_serie || '-'}</td>
+                    <td>{eq.tamanho_polegadas ? `${eq.tamanho_polegadas}"` : '-'}</td>
                     <td>{eq.status_integridade}</td>
                     <td>{eq.testado ? '✓' : '✗'}</td>
                     <td>
