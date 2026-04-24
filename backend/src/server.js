@@ -70,9 +70,10 @@ app.use((req, res) => {
 });
 
 // Iniciar servidor
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
-  console.log(`📊 Acesse http://localhost:${PORT} para mais informações`);
+  console.log(`🌐 Acessível em http://192.168.100.247:${PORT} (rede interna)`);
+  console.log(`💻 Também em http://localhost:${PORT} (local)`);
 });
 
 module.exports = app;
