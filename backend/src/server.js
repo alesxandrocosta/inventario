@@ -9,17 +9,26 @@ const app = express();
 const PORT = process.env.API_PORT || 3001;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
-// Configurar CORS para produção
+// Configurar CORS para rede interna e desenvolvimento
 const corsOptions = {
   origin: function (origin, callback) {
+    // Em desenvolvimento, aceita qualquer origem
+    if (NODE_ENV === 'development') {
+      callback(null, true);
+      return;
+    }
+    
+    // Em produção, valida origens
     const allowedOrigins = [
       'http://localhost:3000',
       'http://localhost:3001',
+      'http://192.168.100.247:3000',
+      'http://192.168.100.247:3001',
       'https://inventario-alesxandrocosta.vercel.app',
-      'https://inventario.com.br',  // Adicionar seu domínio aqui
+      'https://inventario.com.br',
     ];
     
-    if (NODE_ENV === 'development' || !origin || allowedOrigins.includes(origin)) {
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       console.warn(`CORS bloqueado para origin: ${origin}`);
